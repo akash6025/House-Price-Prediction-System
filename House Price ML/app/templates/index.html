@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🏠 House Price Estimator</h1>
+
+    <form action="/predict" method="post">
+        <input type="number" name="OverallQual" placeholder="Overall Quality (1-10)" required>
+        <input type="number" name="GrLivArea" placeholder="Living Area (sq ft)" required>
+        <input type="number" name="GarageCars" placeholder="Garage Capacity" required>
+        <input type="number" name="GarageArea" placeholder="Garage Area" required>
+        <input type="number" name="TotalBsmtSF" placeholder="Basement Area" required>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    <h2>{{ prediction_text }}</h2>
+</div>
+
+</body>
+</html>
